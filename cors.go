@@ -1,5 +1,5 @@
-// Package log implements a featured and structured generic logger
-// interface designed to be used in core and third-party vinxi components.
+// Package cors is net/http handler to handle CORS related requests
+// as defined by http://www.w3.org/TR/cors/
 package cors
 
 import (

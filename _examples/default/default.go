@@ -2,9 +2,8 @@ package main
 
 import (
 	"fmt"
-	"net/http"
 
-	"gopkg.in/vinxi/log.v0"
+	"gopkg.in/vinxi/cors.v0"
 	"gopkg.in/vinxi/vinxi.v0"
 )
 
@@ -14,16 +13,12 @@ func main() {
 	// Create a new vinxi proxy
 	vs := vinxi.NewServer(vinxi.ServerOptions{Port: port})
 
-	// Plugin multiple middlewares writting some logs
-	vs.Use(func(w http.ResponseWriter, r *http.Request, h http.Handler) {
-		log.Infof("[%s] %s", r.Method, r.RequestURI)
-		h.ServeHTTP(w, r)
-	})
-
-	vs.Use(func(w http.ResponseWriter, r *http.Request, h http.Handler) {
-		log.Warnf("%s", "foo bar")
-		h.ServeHTTP(w, r)
-	})
+	// Enable CORS support for all incoming traffic
+	vs.Use(cors.New(cors.Options{
+		AllowedOrigins:   []string{"http://foo.com"},
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE"},
+		AllowCredentials: true,
+	}))
 
 	// Target server to forward
 	vs.Forward("http://httpbin.org")
