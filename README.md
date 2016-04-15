@@ -21,7 +21,6 @@ package main
 
 import (
   "fmt"
-  "net/http"
 
   "gopkg.in/vinxi/cors.v0"
   "gopkg.in/vinxi/vinxi.v0"
