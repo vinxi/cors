@@ -1,6 +1,6 @@
 # cors [![Build Status](https://travis-ci.org/vinxi/cors.png)](https://travis-ci.org/vinxi/cors) [![GoDoc](https://godoc.org/github.com/vinxi/cors?status.svg)](https://godoc.org/github.com/vinxi/cors) [![Coverage Status](https://coveralls.io/repos/github/vinxi/cors/badge.svg?branch=master)](https://coveralls.io/github/vinxi/cors?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/vinxi/cors)](https://goreportcard.com/report/github.com/vinxi/cors)
 
-[W3C standard]((http://www.w3.org/TR/cors/)) compliant full-featured CORS support for your proxies.
+[W3C standard](http://www.w3.org/TR/cors/) compliant full-featured CORS support for your proxies.
 
 ## Installation
 
